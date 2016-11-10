@@ -14,10 +14,12 @@ bot.on('message', message => {
 	
 	chanName = message.channel;
 
+	//Prevents bot from reacting to its own messages
 	if(message.author.id == 234755942695174144){
 		return;
 	}
 
+	/* Failed attempt at creating a find function that discord so desperately lacks
 	if(message.content.includes("!find")){
 		var regEx = /\s(.*)/;
 		console.log(regEx.exec(message.content)[0]);
@@ -29,6 +31,7 @@ bot.on('message', message => {
 			}
 		});
 	}
+	*/
 
   if (message.content === '!lenny') {
     message.channel.sendMessage('( ͡° ͜ʖ ͡°)');
@@ -39,11 +42,12 @@ bot.on('message', message => {
   }
 
 
-  if (message.content === 'Clear') {
-    message.channel.sendMessage('Nice image \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Nice image');
+  //Large blank message, just in case someone is using discord at work and someone feels like messing with you by posting terrible images
+  if (message.content === '!clear') {
+    message.channel.sendMessage('X\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCleared');
   }
 
-  if (message.content === 'Meme') {
+  if (message.content === '!meme') {
     message.channel.sendMessage('Me mes');
   }
 
